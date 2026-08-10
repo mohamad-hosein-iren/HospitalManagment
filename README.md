@@ -69,3 +69,6 @@ The project is implemented in two logical layers:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/mohamad-hosein-iren/HospitalManagment.git](https://github.com/mohamad-hosein-iren/HospitalManagment.git)
+## Screenshots
+
+![Main Form](images/main-form.png)
