@@ -1,74 +1,71 @@
-# سیستم مدیریت بیمارستان پیشرفته (Hospital Management System)
+# Advanced Hospital Management System
 
- -#C و Windows Forms  پیاده‌سازی شده با 
-
----
-
-## معرفی پروژه
-
-این سیستم یک پلتفرم جامع برای مدیریت فرآیندهای بیمارستانی است که با هدف رعایت دقیق مفاهیم شی‌گرایی (OOP)، پیاده‌سازی ساختارهای داده دست‌ساز و مدیریت متمرکز داده‌ها طراحی و توسعه یافته است.
+An advanced, comprehensive desktop platform designed for hospital operation management, built with **C#** and **Windows Forms (.NET)**. This project demonstrates strict adherence to Object-Oriented Programming (OOP) principles, custom data structures, and a structured layered architecture.
 
 ---
 
-## ویژگی‌ها 
-### 1. مفاهیم پیشرفته شی‌گرایی (OOP)
-* درخت ارث‌بری 4 سطحی: IIdentifiable / IPrintable -> Person (Abstract) -> Employee (Abstract) -> Doctor / Nurse
-* انتزاع (Abstraction): تعریف کلاس‌های انتزاعی پایه مانند Person و Employee.
-* اینترفیس‌ها (Interfaces): بهره‌گیری از اینترفیس‌های استاندارد و سفارشی (IIdentifiable, IPrintable, IComparable, IEnumerable).
-* چندریختی (Polymorphism): پیاده‌سازی Method Overloading، Method Overriding و پیاده‌سازی رفتارهای متفاوت در کلاس‌های مشتق‌شده.
-* کپسوله‌سازی کامل (Encapsulation): private‌سازی تمامی فیلدها و کنترل دسترسی از طریق Propertyها.
-* ایندکسرها (Indexers) و بیش‌بارگذاری عملگرها: پیاده‌سازی ایندکسر در کلاس‌های بیمارستان و بخش‌ها.
+## Project Overview
 
-### 2. ساختارهای داده اختصاصی (Custom Generic Collections)
-بدون استفاده از کالکشن‌های آماده، ساختارهای داده زیر به‌صورت دستی و جنریک پیاده‌سازی شده‌اند:
-* CustomList<T>: لیست پویا با قابلیت پیمایش (IEnumerable) و مدیریت خطای خطوط مرزی.
-* CustomQueue<T>: ساختار صف جنریک جهت مدیریت نوبت‌دهی بیماران.
-* CustomStack<T>: ساختار پشته جنریک جهت نگهداری تاریخچه عملیات و سوابق.
-
-### 3. رویدادها، دلیگیت‌ها و انوم‌ها (Events, Delegates & Enums)
-* رویدادها و دلیگیت‌های سفارشی: جهت مدیریت تغییر وضعیت تخت‌ها، ثبت پرونده‌ها و هشدارهای بیماران.
-* تنوع Enumها: بیش از 10 انوم مختلف برای کنترل نقش‌ها، وضعیت‌های پذیرش، تخصص‌های پزشکی و شیفت‌ها.
+This system streamlines hospital workflows including patient registration, medical records, appointment scheduling, and staff management. It avoids relying on built-in standard collections, instead utilizing custom hand-crafted generic data structures to demonstrate deep computer science concepts.
 
 ---
 
-## ساختار معماری پروژه
+## Core Features
 
-پروژه در دو بخش منطقی و لایه‌ای پیاده‌سازی شده است:
+### 1. Advanced Object-Oriented Programming (OOP)
+* **4-Level Inheritance Tree:** `IIdentifiable` / `IPrintable` -> `Person` (Abstract) -> `Employee` (Abstract) -> `Doctor` / `Nurse`
+* **Abstraction:** Base abstract classes (`Person`, `Employee`) enforcing clear domain boundaries.
+* **Interfaces:** Extensive use of standard and custom interfaces (`IIdentifiable`, `IPrintable`, `IComparable`, `IEnumerable`).
+* **Polymorphism:** Implementation of method overloading, overriding, and dynamic behavior across derived classes.
+* **Encapsulation:** Fully encapsulated private fields exposed via robust properties with strict validation.
+* **Indexers & Operator Overloading:** Custom indexers for quick entity lookup inside `Hospital` and `Department` classes.
 
-### 1. لایه منطق و مدل‌ها (managment hospital)
-* CustomCollections: شامل ساختارهای داده دست‌ساز (CustomList, CustomQueue, CustomStack).
-* Interface: اینترفیس‌های پایه پروژه.
-* Models:
-  * Enum: انوم‌های مدیریت وضعیت‌ها.
-  * Hospital: کلاس‌های ساختاری بیمارستان (Department, Room, Bed).
-  * Medical: کلاس‌های عملیات پزشکی (MedicalRecord, Appointment, Treatment).
-  * People: ساختار پرسنل و بیماران (Person, Patient, Employee, Doctor, Nurse).
+### 2. Custom Generic Data Structures
+Implemented from scratch without using standard `.NET` collections:
+* **`CustomList<T>`:** Dynamic generic list supporting traversal (`IEnumerable`) and bound checking.
+* **`CustomQueue<T>`:** Generic First-In-First-Out (FIFO) queue for patient queue management.
+* **`CustomStack<T>`:** Generic Last-In-First-Out (LIFO) stack for operation logs and action history.
 
-### 2. لایه رابط کاربری (WinFormsApp1)
-* MainForm: داشبورد اصلی برنامه.
-* PatientsForm: مدیریت و ثبت اطلاعات بیماران.
-* DoctorsForm: مدیریت پزشکان و تخصص‌ها.
-* NursesForm: مدیریت کادر پرستاری.
-* EmployeeForm: مدیریت پرسنل اداری.
-* AppointmentsForm: سیستم نوبت‌دهی و زمان‌بندی.
-
----
-
-## ابزارها و تکنولوژی‌های مورد استفاده
-
-* زبان برنامه نویسی: C# (.NET)
-* رابط کاربری: Windows Forms (WinForms)
-* محیط توسعه: Visual Studio 2022
-* کنترل نسخه: Git & GitHub
+### 3. Events, Delegates & Enums
+* **Custom Delegates & Events:** Event-driven architecture for handling bed status updates, record creation, and critical alerts.
+* **Comprehensive Enums:** Over 10 custom enums governing user roles, admission statuses, medical specialties, and shift schedules.
 
 ---
 
-## نحوه اجرا و راه‌اندازی
+## Architecture & Project Structure
 
-1. ریپازیتوری را کلون کنید:
-   git clone https://github.com/mohamad-hosein-iren/HospitalManagment.git
+The solution is divided into clear logical modules and layers:
 
-2. فایل managment hospital.sln را با استفاده از Visual Studio  باز کنید.
-3. پروژه را اجرا (F5) کنید.
+### 1. Core Logic & Domain Layer (`managment hospital`)
+* **`CustomCollections/`**: Hand-crafted generic data structures (`CustomList`, `CustomQueue`, `CustomStack`).
+* **`Interface/`**: Base domain interfaces and contracts.
+* **`Models/`**:
+  * **`Enum/`**: System state and role definitions.
+  * **`Hospital/`**: Structural domain models (`Department`, `Room`, `Bed`).
+  * **`Medical/`**: Clinical operation models (`MedicalRecord`, `Appointment`, `Treatment`).
+  * **`People/`**: Hierarchy for staff and patients (`Person`, `Patient`, `Employee`, `Doctor`, `Nurse`).
 
-![Main Form](images/main-form.png)
+### 2. User Interface Layer (`WinFormsApp1`)
+* **`MainForm`**: Central system dashboard.
+* **`PatientsForm`**: Patient records, intake, and status tracking.
+* **`DoctorsForm`**: Physician and specialty management.
+* **`NursesForm`**: Nursing staff allocations and shift management.
+* **`EmployeeForm`**: Administrative staff management.
+* **`AppointmentsForm`**: Scheduling and queue tracking.
+
+---
+
+## Tech Stack & Tools
+
+* **Language:** C# (.NET)
+* **UI Framework:** Windows Forms (WinForms)
+* **IDE:** Visual Studio 2022
+* **Version Control:** Git & GitHub
+
+---
+
+## Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/mohamad-hosein-iren/HospitalManagment.git](https://github.com/mohamad-hosein-iren/HospitalManagment.git)
