@@ -71,4 +71,4 @@
 2. فایل managment hospital.sln را با استفاده از Visual Studio  باز کنید.
 3. پروژه را اجرا (F5) کنید.
 
-![صفحه اصلی](images/main-form.png)
+![Main Form](images/main-form.png)
