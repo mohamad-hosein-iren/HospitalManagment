@@ -6,39 +6,39 @@ An advanced, comprehensive desktop platform designed for hospital operation mana
 
 ## Project Overview
 
-This system streamlines hospital workflows including patient registration, medical records, appointment scheduling, and staff management. It avoids relying on built-in standard collections, instead utilizing custom hand-crafted generic data structures to demonstrate deep computer science concepts.
+This system is a comprehensive platform for managing hospital operations, designed to strictly follow Object-Oriented Programming (OOP) principles, custom-built data structures, and centralized data management.
 
 ---
 
 ## Core Features
 
-### 1. Advanced Object-Oriented Programming (OOP)
+### 1. Advanced OOP Concepts
 * **4-Level Inheritance Tree:** `IIdentifiable` / `IPrintable` -> `Person` (Abstract) -> `Employee` (Abstract) -> `Doctor` / `Nurse`
-* **Abstraction:** Base abstract classes (`Person`, `Employee`) enforcing clear domain boundaries.
-* **Interfaces:** Extensive use of standard and custom interfaces (`IIdentifiable`, `IPrintable`, `IComparable`, `IEnumerable`).
-* **Polymorphism:** Implementation of method overloading, overriding, and dynamic behavior across derived classes.
-* **Encapsulation:** Fully encapsulated private fields exposed via robust properties with strict validation.
-* **Indexers & Operator Overloading:** Custom indexers for quick entity lookup inside `Hospital` and `Department` classes.
+* **Abstraction:** Defining base abstract classes like `Person` and `Employee`.
+* **Interfaces:** Utilizing standard and custom interfaces (`IIdentifiable`, `IPrintable`, `IComparable`, `IEnumerable`).
+* **Polymorphism:** Implementation of Method Overloading, Method Overriding, and dynamic behavior across derived classes.
+* **Encapsulation:** Making all fields private and controlling access via properties.
+* **Indexers & Operator Overloading:** Custom indexers implemented in `Hospital` and `Department` classes.
 
-### 2. Custom Generic Data Structures
-Implemented from scratch without using standard `.NET` collections:
+### 2. Custom Generic Collections
+Built from scratch without relying on built-in standard collections:
 * **`CustomList<T>`:** Dynamic generic list supporting traversal (`IEnumerable`) and bound checking.
-* **`CustomQueue<T>`:** Generic First-In-First-Out (FIFO) queue for patient queue management.
-* **`CustomStack<T>`:** Generic Last-In-First-Out (LIFO) stack for operation logs and action history.
+* **`CustomQueue<T>`:** Generic FIFO queue for patient scheduling.
+* **`CustomStack<T>`:** Generic LIFO stack for operation logs and action history.
 
 ### 3. Events, Delegates & Enums
-* **Custom Delegates & Events:** Event-driven architecture for handling bed status updates, record creation, and critical alerts.
-* **Comprehensive Enums:** Over 10 custom enums governing user roles, admission statuses, medical specialties, and shift schedules.
+* **Custom Events & Delegates:** Managing bed status changes, record logging, and patient alerts.
+* **Variety of Enums:** Over 10 custom enums for roles, admission statuses, medical specialties, and shift schedules.
 
 ---
 
 ## Architecture & Project Structure
 
-The solution is divided into clear logical modules and layers:
+The project is implemented in two logical layers:
 
-### 1. Core Logic & Domain Layer (`managment hospital`)
-* **`CustomCollections/`**: Hand-crafted generic data structures (`CustomList`, `CustomQueue`, `CustomStack`).
-* **`Interface/`**: Base domain interfaces and contracts.
+### 1. Domain & Core Logic Layer (`managment hospital`)
+* **`CustomCollections/`**: Hand-crafted data structures (`CustomList`, `CustomQueue`, `CustomStack`).
+* **`Interface/`**: Base domain interfaces.
 * **`Models/`**:
   * **`Enum/`**: System state and role definitions.
   * **`Hospital/`**: Structural domain models (`Department`, `Room`, `Bed`).
@@ -47,11 +47,11 @@ The solution is divided into clear logical modules and layers:
 
 ### 2. User Interface Layer (`WinFormsApp1`)
 * **`MainForm`**: Central system dashboard.
-* **`PatientsForm`**: Patient records, intake, and status tracking.
+* **`PatientsForm`**: Patient records and intake management.
 * **`DoctorsForm`**: Physician and specialty management.
-* **`NursesForm`**: Nursing staff allocations and shift management.
+* **`NursesForm`**: Nursing staff management.
 * **`EmployeeForm`**: Administrative staff management.
-* **`AppointmentsForm`**: Scheduling and queue tracking.
+* **`AppointmentsForm`**: Scheduling and appointment system.
 
 ---
 
