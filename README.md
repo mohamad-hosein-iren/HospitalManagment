@@ -35,6 +35,11 @@ Built from scratch without relying on built-in standard collections:
 ## Architecture & Project Structure
 
 The project is implemented in two logical layers:
+### Class Diagram (UML)
+![UML Class Diagram](images/uml-diagram.png)
+
+
+
 
 ### 1. Domain & Core Logic Layer (`managment hospital`)
 * **`CustomCollections/`**: Hand-crafted data structures (`CustomList`, `CustomQueue`, `CustomStack`).
